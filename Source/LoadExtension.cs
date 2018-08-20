@@ -53,7 +53,32 @@ namespace Service_and_Goods
                 !SimulationManager.instance.SimulationPaused &&
                 SimulationManager.instance.m_currentFrameIndex - PreviousFrameIndex > FrameIndexThreshold)
             {
-                //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, "HI");
+                if (Config.RemoveServiceGarbage)
+                {
+                    //ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.)
+                }
+                if (Config.RemoveServiceHealth)
+                {
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.HealthCare, 100000);
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.Health, 100000);
+                }
+                if (Config.RemoveServiceDeath)
+                {
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.DeathCare, 100000);
+                }
+                if (Config.RemoveServiceCrime)
+                {
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.PoliceDepartment, 100000);
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.CrimeRate, -100000);
+                }
+                if (Config.RemoveServiceFireSafety)
+                {
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.FireDepartment, 100000);
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.FireHazard, -100000);
+                }
+
+
+
                 if (Config.RemovePollutionGround)
                 {
                     Singleton<NaturalResourceManager>.instance.AddPollutionDisposeRate(10000);

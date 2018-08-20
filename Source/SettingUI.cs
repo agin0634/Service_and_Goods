@@ -11,15 +11,38 @@ namespace Service_and_Goods
         {
 
             UIHelperBase Service = helper.AddGroup("Service Remove");
-
+            Service.AddCheckbox("Garbage", Config.RemoveServiceGarbage, (Sel) =>
+            {
+                Config.RemoveServiceGarbage = Sel;
+                Configuration<Service_and_GoodsConfiguration>.Save();
+            });
+            Service.AddCheckbox("Health Care", Config.RemoveServiceHealth, (Sel) =>
+            {
+                Config.RemoveServiceHealth = Sel;
+                Configuration<Service_and_GoodsConfiguration>.Save();
+            });
+            Service.AddCheckbox("Death Care", Config.RemoveServiceDeath, (Sel) =>
+            {
+                Config.RemoveServiceDeath = Sel;
+                Configuration<Service_and_GoodsConfiguration>.Save();
+            });
+            Service.AddCheckbox("Crime", Config.RemoveServiceCrime, (Sel) =>
+            {
+                Config.RemoveServiceCrime = Sel;
+                Configuration<Service_and_GoodsConfiguration>.Save();
+            });
+            Service.AddCheckbox("Fire Safety", Config.RemoveServiceFireSafety, (Sel) =>
+            {
+                Config.RemoveServiceFireSafety = Sel;
+                Configuration<Service_and_GoodsConfiguration>.Save();
+            });
 
             UIHelperBase PollutionRemove = helper.AddGroup("Pollution Remove");
             PollutionRemove.AddCheckbox("Ground", Config.RemovePollutionGround, (Sel) =>
             {
                 Config.RemovePollutionGround = Sel;
                 Configuration<Service_and_GoodsConfiguration>.Save();
-            }
-            );
+            });
             PollutionRemove.AddCheckbox("Water", Config.RemovePollutionWater, (Sel) =>
             {
                 Config.RemovePollutionWater = Sel;
@@ -29,8 +52,7 @@ namespace Service_and_Goods
             {
                 Config.RemovePollutionNoise = Sel;
                 Configuration<Service_and_GoodsConfiguration>.Save();
-            }
-            );
+            });
 
 
 
