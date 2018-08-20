@@ -14,6 +14,11 @@ namespace Service_and_Goods
         public bool RemoveServiceDeath { get; set; }
         public bool RemoveServiceCrime { get; set; }
         public bool RemoveServiceFireSafety { get; set; }
+        public bool RemoveServiceEducation { get; set; }
+
+        public bool OtherOptionLandValue { get; set; }
+        public bool OtherOptionAtractiveness { get; set; }
+        public bool OtherOptionEntertainment { get; set; }
 
         public bool RemovePollutionGround { get; set; }
         public bool RemovePollutionWater { get; set; }

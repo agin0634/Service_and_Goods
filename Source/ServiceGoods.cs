@@ -9,7 +9,7 @@ namespace Service_and_Goods
     public class Service_and_Goods : IUserMod
     {
 
-        public string Name { get { return "Service_and_Goods"; } }
+        public string Name { get { return "Service & Goods"; } }
 
         //TODO define
         public string Description { get { return "Here is where I define my mod"; } }

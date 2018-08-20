@@ -56,6 +56,7 @@ namespace Service_and_Goods
                 if (Config.RemoveServiceGarbage)
                 {
                     //ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.)
+                    
                 }
                 if (Config.RemoveServiceHealth)
                 {
@@ -76,7 +77,33 @@ namespace Service_and_Goods
                     ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.FireDepartment, 100000);
                     ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.FireHazard, -100000);
                 }
+                if (Config.RemoveServiceEducation)
+                {
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.EducationElementary, 100000);
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.EducationHighSchool, 100000);
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.EducationUniversity, 100000);
 
+                   
+
+                    DistrictManager dm = Singleton<DistrictManager>.instance;
+                    District city = dm.m_districts.m_buffer[0];
+                    city.m_productionData.m_tempEducation1Capacity += 1000000u;
+                    city.m_productionData.m_tempEducation2Capacity += 1000000u;
+                    city.m_productionData.m_tempEducation3Capacity += 1000000u;
+                }    
+
+                if (Config.OtherOptionLandValue)
+                {
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.LandValue, 100000);
+                }
+                if (Config.OtherOptionAtractiveness)
+                {
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.Attractiveness, 100000);
+                }
+                if (Config.OtherOptionEntertainment)
+                {
+                    ImmaterialResourceManager.instance.AddResource(ImmaterialResourceManager.Resource.Entertainment, 100000);
+                }
 
 
                 if (Config.RemovePollutionGround)
